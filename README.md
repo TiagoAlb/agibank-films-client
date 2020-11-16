@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Visualização de Filmes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link para acesso ao sistema: http://ec2-177-71-228-249.sa-east-1.compute.amazonaws.com:3001
 
-## Available Scripts
+## Resumo
+A aplicação foi realizada em JavaScript, utilizado a biblioteca ReactJS. O sistema é baseado na Api de filmes https://swapi.dev/api/films e possui as funcionalidades de listagem de filmes, visualização específica de filme, visualização de personagens, visualização especifica de personagens, visualização de produtores, visualização de imagem e trailer do filme e possui link para pesquisa de produtor no Google.
 
-In the project directory, you can run:
+#### Resumo de passos para utilização
+1. Entre na página inicial do sistema.
+2. No caminho /films, escolha dentre os filmes a opção de trailer ou de informações.
+3. Caso deseje visualizar o trailer do filme, será aberto um modal com o trailer.
+4. Caso escolha a opção de Informações, você será direcionado para a página do filme.
+5. Na página do filme, é possivel visualizar os produtores e personagens.
+6. Clique no avatar de um produtor para ser direcionado a página do Google com a pesquisa por nome do produtor.
+7. Clique no avatar de um personagem para ser direcionado a página com as informações específicas.
+8. O grupo de avatars mostra inicialmente o valor maximo de 6 personagens, mas você pode clicar no número de avatars faltante para expandir todos.
 
-### `npm start`
+## Executar projeto
+1. Clone este repositório 
+2. Faça a instalação dos pacotes do projeto com o comando `npm install`
+3. Execute o comando `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Desenvolvimentos futuros
+O sistema de filmes foi criado como teste de desenvolvimento, porém para realizações futuras seria interessante:
+- Inclusão de página de favoritos (o link já foi feito)
+- Inclusão de notificação com filmes em lançamento,
+- Acessos a outros dados da api, como veículos e planetas
