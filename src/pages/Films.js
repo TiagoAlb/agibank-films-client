@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-
 export default function Films() {
     const classes = useStyles()
     const theme = useTheme()

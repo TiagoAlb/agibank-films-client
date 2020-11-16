@@ -23,7 +23,6 @@ export default class Rest {
         api.get(`${this.url}`)
             .then(res => {
                 if (res.status === 200) {
-                    console.log(res)
                     success(res.data)
                 } else {
                     error(res)

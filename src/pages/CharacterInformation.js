@@ -67,7 +67,6 @@ export default function Films(props) {
         try {
             peopleService.get(idCharacter,
                 (success) => {
-                    console.log(success)
                     setCharacter(success)
                 }, (error) => {
                     console.log(error)
