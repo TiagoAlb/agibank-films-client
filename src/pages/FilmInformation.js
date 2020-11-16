@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import '../../node_modules/react-modal-video/scss/modal-video.scss'
 import { makeStyles } from '@material-ui/core/styles'
 import treilers from '../lists/trailers'
-import { getUrlId } from '../utils/utils'
+import { getUrlId, formatDate } from '../utils/utils'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
@@ -124,7 +124,7 @@ export default function Films() {
                             <div className={classes.details}>
                                 <CardContent className={classes.content}>
                                     <Typography component='h5' variant='h5'>
-                                        {film.title} ({film.release_date})
+                                        {film.title} ({formatDate(film.release_date)})
                                     </Typography>
                                     <Typography variant='subtitle1' color='textSecondary'>
                                         {film.director} (director)
