@@ -5,7 +5,7 @@ import CharacterInformation from '../pages/CharacterInformation'
 
 const routes = [
     { path: '/home', name: 'Home', component: Home },
-    { path: '/bookmarks', name: 'Bookmarks', component: Home },
+    { path: '/bookmarks', name: 'Bookmarks', component: Films },
     { path: '/films', name: 'Films', component: Films },
     { path: '/films/:id', name: 'Film', component: FilmInformation },
     { path: '/films/:id/characters/:idCharacter', name: 'Character', component: CharacterInformation },

@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
@@ -18,29 +17,22 @@ export default function SimpleBottomNavigation() {
     const classes = useStyles()
     const [value, setValue] = React.useState('/home')
 
-    const handlePath = (path) => {
-        console.log(path)
-    }
-
     const handleChange = (event, newValue) => {
         setValue(newValue)
-        handlePath(newValue)
     };
 
     return (
         <BottomNavigation
             value={value}
             onChange={handleChange}
-            showLabels
             className={classes.root}
         >
             {menu.map((option) => (
-                <a href={option.path}>
+                <a href={option.path} key={option.name}>
                     <BottomNavigationAction
                         label={option.name}
                         value={option.path}
-                        icon={option.icon}
-                        key={option.name} />
+                        icon={option.icon} />
                 </a>
             ))}
         </BottomNavigation>

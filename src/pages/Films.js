@@ -12,6 +12,7 @@ import LocalMoviesOutlined from '@material-ui/icons/LocalMoviesOutlined'
 import HelpOutlineOutlined from '@material-ui/icons/HelpOutlineOutlined'
 import Typography from '@material-ui/core/Typography'
 import ModalVideo from 'react-modal-video'
+import FilmCard from '../components/FilmCard'
 import FilmsService from '../services/FilmsService'
 
 const useStyles = makeStyles((theme) => ({
@@ -69,50 +70,7 @@ export default function Films() {
         <div>
             {films ?
                 films.map((prop, key) => (
-                    <Card className={classes.root} key={key}>
-                        <Grid container>
-                            <Grid item xs={12} sm={2} align='center'>
-                                <img
-                                    className={classes.cover}
-                                    src={`/static/images/films/${getUrlId(prop.url)}.jpg`}
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm container>
-                                <div className={classes.details}>
-                                    <CardContent className={classes.content}>
-                                        <Typography component='h5' variant='h5'>
-                                            {prop.title} ({formatDate(prop.release_date)})
-                                </Typography>
-                                        <Typography variant='subtitle1' color='textSecondary'>
-                                            {prop.director} (director)
-                                </Typography>
-                                        <Typography variant='body2' color='textSecondary' component='p' align='justify'>
-                                            {prop.opening_crawl}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button
-                                            startIcon={<LocalMoviesOutlined />}
-                                            onClick={() => openTreilerModal(prop.episode_id)}
-                                            variant='outlined'
-                                            size='small'
-                                            color='primary'>
-                                            Trailer
-                                </Button>
-                                        <Button
-                                            startIcon={<HelpOutlineOutlined />}
-                                            variant='contained'
-                                            href={`/films/${getUrlId(prop.url)}`}
-                                            size='small'
-                                            color='secondary'>
-                                            Informações
-                                </Button>
-                                    </CardActions>
-                                </div>
-                            </Grid>
-                            <ModalVideo channel='youtube' isOpen={trailerOpen} videoId={trailerMovieId} onClose={() => setTrailerOpen(false)} />
-                        </Grid>
-                    </Card>
+                    <FilmCard film={prop} key={key} />
                 ))
                 : ''}
         </div>
