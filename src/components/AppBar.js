@@ -9,7 +9,7 @@ import Notifications from '@material-ui/icons/Notifications'
 import Badge from '@material-ui/core/Badge'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
-import Logo from '../assets/images/Agibank_logo.png'
+import logo from '../assets/images/Agibank_logo.png'
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -56,7 +56,7 @@ export default function AppBarComponent(props) {
                         <MenuIcon />
                     </IconButton> : ''}
                 <div className={classes.logo}>
-                    <img src={Logo} width='120' />
+                    <img alt='logo' src={logo} width='120' />
                 </div>
                 <div>
                     <IconButton aria-label="Show notifications" color="inherit">
