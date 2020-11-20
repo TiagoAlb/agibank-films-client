@@ -22,6 +22,7 @@ A aplicação foi realizada em JavaScript, utilizado a biblioteca ReactJS. O sis
 6. Clique no avatar de um produtor para ser direcionado a página do Google com a pesquisa por nome do produtor.
 7. Clique no avatar de um personagem para ser direcionado a página com as informações específicas.
 8. O grupo de avatars mostra inicialmente o valor maximo de 6 personagens, mas você pode clicar no número de avatars faltante para expandir todos.
+9. Na página específica do personagem você pode visualizar as suas informações e filmes relacionados. Clique em um filme para ser direcionado a página de informações.
 
 ## Executar projeto
 1. Clone este repositório 
