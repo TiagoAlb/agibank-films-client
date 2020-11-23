@@ -276,3 +276,5 @@ O sistema de filmes foi criado como teste de desenvolvimento, porém para realiz
 - Inclusão de página de favoritos (o link já foi feito)
 - Inclusão de notificação com filmes em lançamento,
 - Acessos a outros dados da api, como veículos e planetas
+- Adicionar pontuação em estrelas por votação de usuários
+- Adicionar comentários de usuários
