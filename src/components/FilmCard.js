@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../node_modules/react-modal-video/scss/modal-video.scss'
 import { NavLink } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import treilers from '../lists/trailers'
 import { getUrlId, formatDate } from '../utils/utils'
@@ -40,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
         height: theme.spacing(4),
         cursor: 'pointer'
     },
+    divNoLoaded: {
+        padding: theme.spacing(10)
+    },
     avatars: {
         display: 'flex',
         '& > *': {
@@ -50,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Films(props) {
     const classes = useStyles()
-    const { id } = useParams()
     const [film, setFilm] = useState(null)
     const [producers, setProducers] = useState(null)
     const [trailerOpen, setTrailerOpen] = useState(false)
@@ -151,7 +152,7 @@ export default function Films(props) {
                                             <AvatarGroup max={maxCharacteres}>
                                                 {film.characters.map((prop) => (
                                                     <NavLink
-                                                        to={`/films/${id}/characters/${getUrlId(prop)}`}
+                                                        to={`/films/${getUrlId(film.url)}/characters/${getUrlId(prop)}`}
                                                         style={{ textDecoration: 'none', color: 'inherit', border: 'none' }}
                                                         key={prop}>
                                                         <Avatar
@@ -194,7 +195,7 @@ export default function Films(props) {
                     </Grid>
                     <ModalVideo channel='youtube' isOpen={trailerOpen} videoId={trailerMovieId} onClose={() => setTrailerOpen(false)} />
                 </Grid>
-                : ''
+                : <div className={classes.divNoLoaded}>No movie loaded...</div>
             }
         </Card>
     )

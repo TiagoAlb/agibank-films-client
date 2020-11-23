@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="makeStyles-divNoLoaded-6"
+  >
+    No movie loaded...
+  </div>
+</div>
+`;
+
+exports[`renders correctly with info 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="makeStyles-divNoLoaded-6"
+  >
+    No movie loaded...
+  </div>
+</div>
+`;
+
+exports[`renders no movie loaded when no props is informed 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="makeStyles-divNoLoaded-6"
+  >
+    No movie loaded...
+  </div>
+</div>
+`;

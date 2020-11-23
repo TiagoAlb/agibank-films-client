@@ -9,8 +9,6 @@ import FaceOutlined from '@material-ui/icons/FaceOutlined'
 import HeightOutlined from '@material-ui/icons/HeightOutlined'
 import ColorLensOutlined from '@material-ui/icons/ColorLensOutlined'
 import VisibilityOutlined from '@material-ui/icons/VisibilityOutlined'
-import GridList from '@material-ui/core/GridList'
-import GridListTile from '@material-ui/core/GridListTile'
 import WcOutlined from '@material-ui/icons/WcOutlined'
 import EventOutlined from '@material-ui/icons/EventOutlined'
 import Card from '@material-ui/core/Card'
@@ -19,6 +17,8 @@ import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
 import PeopleService from '../services/PeopleService'
+
+const peopleService = new PeopleService()
 
 export default function Films(props) {
     const useStyles = makeStyles((theme) => ({
@@ -61,24 +61,19 @@ export default function Films(props) {
     const classes = useStyles()
     const { idCharacter } = useParams()
     const [character, setCharacter] = useState(null)
-    const peopleService = new PeopleService()
 
-    const getCharacter = () => {
-        try {
+    useEffect(() => {
+        const getCharacter = () => {
             peopleService.get(idCharacter,
                 (success) => {
                     setCharacter(success)
                 }, (error) => {
                     console.log(error)
                 })
-        } catch (error) {
-            console.log(error)
         }
-    }
 
-    useEffect(() => {
         getCharacter()
-    }, [])
+    }, [idCharacter])
 
     return (
         <div>
@@ -134,7 +129,7 @@ export default function Films(props) {
                                     </Typography>
                                     <div className={classes.gridList}>
                                         {character.films.map((prop) => (
-                                            <NavLink className={classes.cover} to={`/films/${getUrlId(prop)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                            <NavLink key={prop} className={classes.cover} to={`/films/${getUrlId(prop)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                                 <img
                                                     className={classes.cover}
                                                     src={`/static/images/films/${getUrlId(prop)}.jpg`}

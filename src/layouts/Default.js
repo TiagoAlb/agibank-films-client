@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
@@ -6,6 +6,8 @@ import AppBar from '../components/AppBar'
 import Drawer from '../components/Drawer'
 import BottomNavigation from '../components/BottomNavigation'
 import routes from '../routes/routes'
+
+const isMobile = window.innerWidth <= 800
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Default() {
     const [open, setOpen] = useState(false)
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 800)
     const classes = useStyles()
 
     const handleDrawerOpen = () => {
